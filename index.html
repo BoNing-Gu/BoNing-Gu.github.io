@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gu Guoqin - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1a73e8;
+            --dark-blue: #0d47a1;
+            --light-blue: #e8f0fe;
+            --white: #ffffff;
+            --gray: #f5f5f5;
+            --dark-gray: #333333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--gray);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--white);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item i {
+            font-size: 1.2rem;
+        }
+        
+        section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: var(--dark-blue);
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+        
+        .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .award-badge {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <!-- Replace with actual profile image -->
+                <img src="images/国旗班241001.jpg" alt="Gu Guoqin" class="profile-img">
+                <h1>GU GUOQIN</h1>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>188-4116-0913</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>guoqin_gu@163.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/BoNing-Gu" target="_blank" style="color: white;">github.com/BoNing-Gu</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <section>
+            <h2>EDUCATION</h2>
+            <h3>Xiamen University, School of Economics</h3>
+            <span class="date">Sep. 2022 - Jun. 2026</span>
+            <p>Bachelor of Economics (Financial Engineering)</p>
+            <ul>
+                <li>GPA: 3.823 / 4 | Ranking: 3 / 29</li>
+                <li>Skills: IELTS: 7.0 | CET-6: 485 | CET-4: 540 | Proficient in Python, R, and LaTeX</li>
+                <li>Core Courses: Calculus (96), Probability Theory and Mathematical Statistics (97), Multivariate Statistical Analysis (Ongoing), Data Analysis and R Programming (95), Financial Economics (95), Financial Engineering (95), C Programming (94), Natural Language Processing and Large Language Models (Ongoing)</li>
+                <li>Honors: Academic Excellence Scholarship, Academic Innovation Scholarship, and other university-level scholarships</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>COMPETITION EXPERIENCE</h2>
+            <div class="grid-container">
+                <div>
+                    <h3>Contradiction and Error Detection in Financial Long Texts Based on LLM <span class="award-badge">2nd Place</span></h3>
+                    <span class="date">Jul. 2024 - Aug. 2024</span>
+                    <p>Alibaba Cloud Tianchi Advanced Fintech AI Competition (¥30,000 Prize)</p>
+                    <ul>
+                        <li>Leveraged LLMs to detect contradictions or errors in financial-related documents, achieving an F1 score of 0.5018</li>
+                        <li>Sampled unstructured texts and used GPT-4 to generate pos/neg samples based on annotation examples</li>
+                        <li>Fine-tuned GLM4-9B using LoRA</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Causal Relationship Identification in DAGs: A Supervised Learning Approach <span class="award-badge">3rd Place</span></h3>
+                    <span class="date">Oct. 2024 - Dec. 2024</span>
+                    <p>Abu Dhabi Investment Authority (ADIA Lab) Causal Discovery Challenge ($10,000 Prize)</p>
+                    <ul>
+                        <li>Identify ternary causal structures in 20,000+ datasets with 3-10 variables, achieving an accuracy score of 0.7406</li>
+                        <li>Trained an XGBoost within Scikit-learn, integrating 300+ features</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>How Does AI Influence Corporate Green? Evidence Based on RAG and LLM <span class="award-badge">National 2nd Prize</span></h3>
+                    <span class="date">Apr. 2024 - Jun. 2024</span>
+                    <p>National College Students Statistical Modeling Competition</p>
+                    <ul>
+                        <li>Used LLMs to analyze companies' annual reports, measuring how AI significantly improves GTFP in enterprises</li>
+                        <li>Scraped over 100GB of listed companies' annual reports using Selenium</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>RESEARCH EXPERIENCE</h2>
+            <h3>Sentiment Analysis for EUR/USD Exchange Rate Based on FXFinBERT</h3>
+            <span class="date">Jan. 2024 - May. 2024</span>
+            <p>Submitted to Applied Soft Computing (JCR Q1, Impact Factor: 7.2), currently under second-round review</p>
+            <ul>
+                <li>Developed a sentiment dataset and fine-tuned FXFinBERT, achieving superior classification performance compared to LLMs</li>
+                <li>DML results showed a significant impact of sentiment on exchange rate fluctuations</li>
+                <li>Incorporating sentiment improved the predictive performance of LSTM models</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>INTERNSHIP EXPERIENCE</h2>
+            <h3>Synthesis Electronic Technology Research Institute</h3>
+            <span class="date">Jul. 2024 - Aug. 2024</span>
+            <p>Operations Algorithm Intern</p>
+            <ul>
+                <li>Developed a black gas station detection model, utilizing GeoPandas and Shapely to process geographic data</li>
+                <li>Built an anomaly detection model for special vehicle behavior monitoring in Smart Jinan project</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>SKILLS</h2>
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">R</span>
+                <span class="skill-tag">LaTeX</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">LLMs</span>
+                <span class="skill-tag">Data Analysis</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">NLP</span>
+                <span class="skill-tag">Financial Engineering</span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
