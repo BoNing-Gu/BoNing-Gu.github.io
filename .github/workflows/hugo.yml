@@ -47,8 +47,10 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
+        working-directory: ./personal-website
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
+        working-directory: ./personal-website
         env:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
@@ -59,11 +61,12 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" 
       - name: Index pagefind
+        working-directory: ./personal-website
         run: npx pagefind --site "./public"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
-          path: ./public
+          path: ./personal-website/public
 
   # Deployment job
   deploy:
