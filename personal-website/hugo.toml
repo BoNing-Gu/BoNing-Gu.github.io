@@ -15,6 +15,11 @@ ignoreFiles = [ '\.redacted', '\.old','\.bak', '\.tmp', '\.swp', '\.DS_Store']
 ## Generate a robots.txt
 enableRobotsTXT = true
 
+## Sitemap configuration
+[sitemap]
+    ## Change frequency setting (will affect posts listings layout): 'always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never'
+    changeFreq = 'monthly'
+
 ## Front matter field configurations
 [frontmatter]
     ## Publication date fields
@@ -148,8 +153,10 @@ enableRobotsTXT = true
 
     ## Search configuration
     [params.search]
-        ## Enable search
+        ## Enable search functionality, please index your site first
         enabled = true
+        ## Use pagefind search when javascript enabled, currently only 'pagefind' is supported, further options to be determined
+        pagefind = true
 
 ## Menu configuration
 [menu]

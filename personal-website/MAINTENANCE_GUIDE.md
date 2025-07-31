@@ -278,86 +278,40 @@ title = '网站标题'
 2. 启动本地服务器：
    ```bash
    cd personal-website
-   hugo server -D
+   hugo server --minify -D
    ```
+   
+   > **重要**: hugo-brewm 主题要求使用 `--minify` 选项，否则某些元素会有额外的空格。
 
 3. 在浏览器中访问 `http://localhost:1313`
 
+4. 如果启用了 PageFind 搜索，需要构建搜索索引：
+   ```bash
+   hugo --minify
+   npx pagefind --site "public"
+   ```
+
 ### GitHub Pages 部署
 
-#### 方法一：GitHub Actions 自动部署
-1. 在仓库根目录创建 `.github/workflows/hugo.yml`：
+#### 方法一：GitHub Actions 自动部署（推荐）
 
-```yaml
-name: Deploy Hugo site to Pages
+项目已配置 `.github/workflows/hugo.yml` 文件，支持：
+- Hugo 0.139.0（符合 hugo-brewm 主题要求）
+- 自动 PageFind 搜索索引构建
+- 必需的 `--minify` 选项
+- 自定义域名支持
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+**部署步骤**：
+1. 推送代码到 `main` 分支
+2. GitHub Actions 自动构建和部署
+3. 在 GitHub 仓库设置中：
+   - 进入 Settings > Pages
+   - Source 选择 "GitHub Actions"
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-defaults:
-  run:
-    shell: bash
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.120.0
-    steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb          
-      - name: Install Dart Sass
-        run: sudo snap install dart-sass
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v3
-      - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Build with Hugo
-        env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
-        run: |
-          cd personal-website
-          hugo \
-            --gc \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./personal-website/public
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
-```
+**主题特定要求**：
+- 必须使用 Hugo Extended 版本
+- 必须使用 `--minify` 选项构建
+- PageFind 搜索需要 Node.js 环境
 
 2. 在 GitHub 仓库设置中：
    - 进入 Settings > Pages
@@ -372,10 +326,22 @@ jobs:
 
 2. 将 `public/` 目录内容推送到 `gh-pages` 分支
 
-### 自定义域名
-1. 在 `static/` 目录下创建 `CNAME` 文件
-2. 文件内容为你的域名：`yourdomain.com`
-3. 在域名提供商处设置 DNS 记录指向 GitHub Page
+### 自定义域名配置
+
+项目已配置自定义域名 `guoqin-gu.fun`：
+
+1. **CNAME 文件**：已在 `static/CNAME` 中配置
+2. **baseURL 配置**：已在 `hugo.toml` 中设置为 `https://guoqin-gu.fun/`
+3. **DNS 设置**：需要在域名提供商处配置：
+   ```
+   类型: CNAME
+   名称: @（或留空）
+   值: boning-gu.github.io
+   ```
+
+**访问地址**：
+- GitHub Pages: https://boning-gu.github.io
+- 自定义域名: https://guoqin-gu.fun
 
 ## 🔧 常见问题
 
@@ -396,7 +362,19 @@ jobs:
 ### 4. 部署失败
 - 检查 GitHub Actions 日志
 - 确保仓库权限设置正确
-- 验证 Hugo 版本兼容性
+- 验证 Hugo 版本兼容性（hugo-brewm 要求 ≥ 0.135.0）
+- 确保使用了 `--minify` 选项
+- 检查 PageFind 搜索索引是否正确构建
+
+### 5. 搜索功能不工作
+- 确保 `hugo.toml` 中 `[params.search]` 配置正确
+- 检查 PageFind 是否在构建过程中正确执行
+- 验证搜索索引文件是否生成在 `public/` 目录
+
+### 6. 主题特定问题
+- 确保使用 Hugo Extended 版本
+- 检查主题子模块是否正确初始化：`git submodule update --init --recursive`
+- 清除构建缓存：`hugo mod clean`
 
 ## 📚 参考资源
 
