@@ -343,7 +343,45 @@ title = '网站标题'
 - GitHub Pages: https://boning-gu.github.io
 - 自定义域名: https://guoqin-gu.fun
 
-## 🔧 常见问题
+## 🔧 故障排除
+
+### GitHub Pages 404错误解决方案
+
+如果访问 `https://boning-gu.github.io/` 出现404错误，请按以下步骤排查：
+
+#### 1. 检查GitHub Pages设置
+1. 进入GitHub仓库：`https://github.com/BoNing-Gu/BoNing-Gu.github.io`
+2. 点击 **Settings** 标签
+3. 在左侧菜单中找到 **Pages**
+4. 确保 **Source** 设置为 **GitHub Actions**（不是 "Deploy from a branch"）
+5. 如果设置不正确，选择 **GitHub Actions** 并保存
+
+#### 2. 验证GitHub Actions工作流
+1. 检查 `.github/workflows/hugo.yml` 文件是否存在
+2. 确认最近的工作流运行成功（绿色勾号）
+3. 如果失败，查看错误日志并修复
+
+#### 3. 检查artifact上传
+确认工作流中的artifact上传路径正确：
+```yaml
+- name: Upload artifact
+  uses: actions/upload-pages-artifact@v3.0.1
+  with:
+    path: ./personal-website/public
+```
+
+#### 4. 验证index.html文件
+确保 `public/index.html` 文件存在且包含正确的baseURL：
+- 本地运行：`hugo --gc --minify --baseURL "https://boning-gu.github.io/"`
+- 检查生成的 `public/index.html` 中的链接
+
+#### 5. 自定义域名设置
+如果使用自定义域名 `guoqin-gu.fun`：
+1. 确保DNS记录正确指向 `boning-gu.github.io`
+2. 在GitHub Pages设置中添加自定义域名
+3. 等待DNS传播（可能需要24-48小时）
+
+### 常见问题
 
 ### 1. 图片不显示
 - 检查图片路径是否正确
