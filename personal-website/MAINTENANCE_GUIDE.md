@@ -308,6 +308,11 @@ title = '网站标题'
    - 进入 Settings > Pages
    - Source 选择 "GitHub Actions"
 
+**⚠️ 重要：baseURL配置**
+- `hugo.toml`中的`baseURL`必须设置为自定义域名：`https://guoqin-gu.fun/`
+- 如果设置错误，会导致CSS、JS、图片等资源无法正确加载
+- 修改baseURL后需要重新构建网站：`hugo --gc --minify`
+
 **主题特定要求**：
 - 必须使用 Hugo Extended 版本
 - 必须使用 `--minify` 选项构建

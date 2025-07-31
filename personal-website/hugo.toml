@@ -1,5 +1,5 @@
 ## Base URL for the site
-baseURL = 'https://boning-gu.github.io/'
+baseURL = 'http://guoqin-gu.fun/'
 ## Site title
 title = 'Gu Guoqin'
 ## Use hugo-brewm theme

@@ -1,4 +1,4 @@
-Sitemap: https://boning-gu.github.io/sitemap.xml
+Sitemap: http://guoqin-gu.fun/sitemap.xml
 User-agent: *
 Disallow:
 User-agent: AI2Bot

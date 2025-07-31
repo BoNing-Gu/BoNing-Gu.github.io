@@ -1,1 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Welcome to My Personal Website on Gu Guoqin</title><link>https://boning-gu.github.io/</link><description>Recent Posts in Welcome to My Personal Website on Gu Guoqin</description><generator>Hugo 0.148.2</generator><language>en</language><managingEditor>Gu Guoqin</managingEditor><webMaster>Gu Guoqin</webMaster><lastBuildDate>Thu, 31 Jul 2025 15:31:05 +0800</lastBuildDate><atom:link href="https://boning-gu.github.io/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome to My Personal Website on Gu Guoqin</title>
+    <link>http://guoqin-gu.fun/</link>
+    <description>Recent Posts in Welcome to My Personal Website on Gu Guoqin</description>
+    <generator>Hugo 0.148.2</generator>
+    <language>en</language>
+    <managingEditor>Gu Guoqin</managingEditor>
+    
+      <webMaster>Gu Guoqin</webMaster>
+    <lastBuildDate>Thu, 31 Jul 2025 15:59:41 +0800</lastBuildDate>
+    <atom:link href="http://guoqin-gu.fun/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
