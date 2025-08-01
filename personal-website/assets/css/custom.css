@@ -1,0 +1,52 @@
+/* 自定义样式 - 纸质纹理背景效果 - 覆盖JavaScript隐藏行为 */
+
+/* 确保grain元素在所有时间都显示 */
+.grain {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 0.05 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' viewBox='0 0 256 256' width='256' height='256' opacity='1' id='svgrain' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'><defs id='defs'><filter id='grain' x='0' y='0' width='1' height='1' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'><feTurbulence type='turbulence' baseFrequency='0.7' numOctaves='7' seed='42' stitchTiles='stitch' x='-1%' y='-1%' width='102%' height='102%' result='turbulence' id='feTurbulence' /><feSpecularLighting surfaceScale='7' specularConstant='3' specularExponent='10' lighting-color='%23ffffff' x='-1%' y='-1%' width='102%' height='102%' in='turbulence' result='specularLighting' id='feSpecularLighting'><feDistantLight azimuth='3' elevation='163' id='feDistantLight4' /></feSpecularLighting></filter></defs><rect width='320' height='320' fill='%23000000' id='blackbody' x='-32' y='-32' opacity='0.03' /><rect width='320' height='320' fill='%23ffffff' filter='url(%23grain)' id='noise' x='-32' y='-32' opacity='0.03' /></svg>");
+}
+
+/* 确保grain元素在所有时间都显示，即使有hidden属性 */
+.grain[hidden] {
+    display: block !important;
+}
+
+/* 确保dwclock元素在所有时间都显示 */
+#dwclock {
+    display: block !important;
+    visibility: visible !important;
+}
+
+#dwclock[hidden] {
+    display: block !important;
+}
+
+/* 为了更好的视觉效果，可以在深色模式下调整透明度 */
+@media (prefers-color-scheme: dark) {
+    .grain {
+        opacity: 0.03 !important;
+    }
+}
+
+/* 确保在高对比度模式下纹理不会干扰可读性 */
+@media (prefers-contrast: more) {
+    .grain {
+        opacity: 0.02 !important;
+    }
+}
+
+/* 在小屏幕设备上减少纹理强度 */
+@media only screen and (max-width: 640px) {
+    .grain {
+        opacity: 0.03 !important;
+    }
+}

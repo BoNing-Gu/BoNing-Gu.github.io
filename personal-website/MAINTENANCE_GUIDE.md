@@ -171,6 +171,7 @@ title = '网站标题'
 2. 启动本地服务器：
    ```bash
    cd personal-website
+   hugo --cleanDestinationDir
    hugo server --minify -D
    ```
    
