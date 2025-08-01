@@ -35,12 +35,6 @@ I'm passionate about the intersection of finance, technology, and artificial int
 - **🥈 2nd Place (¥30,000 Prize)** - Alibaba Tianchi Advanced Fintech AI Competition  
 - **🏆 National 2nd Prize** - Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM)
 
-### 📊 Academic Excellence
-
-- **GPA**: 3.823/4  
-- **IELTS**: 7.0
-- **Scholarships**: ANTA Scholarship, Academic Excellence Scholarship, Academic Innovation Scholarship
-
 ### 📫 Get in Touch
 
 - **Email**: [guoqin_gu@163.com](mailto:guoqin_gu@163.com)

@@ -95,6 +95,23 @@
                 {{- end }}
             </div>
             {{ partial "page/timestamp.html" . }}
+            {{- if eq .Params.project_type "Competition" }}
+                <div id="project-links" class="textsw">
+                    {{- with .Params.competition_url }}
+                        <a href="{{ . }}" style="color: black; font-weight: bold; text-decoration: underline;" target="_blank" rel="noopener">Competition</a>
+                    {{- end }}
+                    {{- if and .Params.competition_url .Params.solution_url }}, {{- end }}
+                    {{- with .Params.solution_url }}
+                        <a href="{{ . }}" style="color: black; font-weight: bold; text-decoration: underline;" target="_blank" rel="noopener">Solution</a>
+                    {{- end }}
+                </div>
+            {{- else if eq .Params.project_type "Tutorial" }}
+                {{- with .Params.project_url }}
+                <div id="project-links" class="textsw">
+                    <a href="{{ . }}" style="color: black; font-weight: bold; text-decoration: underline;" target="_blank" rel="noopener">Project</a>
+                </div>
+                {{- end }}
+            {{- end }}
             {{- end }}
         </header>
         {{- with .Params.toc }}

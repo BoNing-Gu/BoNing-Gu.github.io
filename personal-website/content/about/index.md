@@ -103,12 +103,6 @@ draft: false
 
 I believe in the power of data-driven decision making and the importance of continuous learning in our rapidly evolving world. My goal is to bridge the gap between theoretical knowledge and practical applications in the field of financial engineering.
 
-## Contact Information
-
-I'm always open to discussing opportunities, collaborations, or simply connecting with like-minded individuals. Feel free to reach out to me through any of the following channels:
-
-- **Email**: [guoqin_gu@163.com](mailto:guoqin_gu@163.com)
-- **GitHub**: [github.com/BoNing-Gu](https://github.com/BoNing-Gu)
 
 ---
 
